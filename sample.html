@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//player.ooyala.com/static/v4/stable/4.4.11/core.min.js"></script>
+  <script src="//player.ooyala.com/static/v4/stable/4.4.11/video-plugin/main_html5.min.js"></script>
+  <script src="//player.ooyala.com/static/v4/stable/4.4.11/video-plugin/osmf_flash.min.js"></script>
+  <script src="//player.ooyala.com/static/v4/stable/4.4.11/video-plugin/bit_wrapper.min.js"></script>
+  <script src="html5-skin.min.js"></script>
+  <link rel="stylesheet" href="html5-skin.min.css"/>
+</head>
+
+<body>
+<div id='container' style='width:600px;height:400px;'></div>
+<script>
+  var playerParam = {
+    "pcode": "VoN2YyOnQMV6SH66JBqySzBs4Dpa",
+    "playerBrandingId": "8dfea2bf607c4606b3e71ab65437cdfc",
+    'debug':true,
+    "skin": {
+      "config": "skin.json"
+    }
+  };
+  OO.ready(function() {
+    window.pp = OO.Player.create('container', 'J5amI0NDE66MHoVDlDqUu5YIldKfqrsa', playerParam);
+  });
+</script>
+
+</body>
+</html>
