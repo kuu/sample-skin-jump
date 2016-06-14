@@ -70,6 +70,22 @@ var ControlBar = React.createClass({
     this.props.controller.seek(this.props.duration);
   },
 
+  handleBackwards: function() {
+    var currentPlayheadTime = parseInt(this.props.currentPlayhead);
+    currentPlayheadTime = isFinite(currentPlayheadTime) ? currentPlayheadTime - 10 : 0;
+    if (currentPlayheadTime >= 0) {
+      this.props.controller.seek(Math.max(currentPlayheadTime, 0));
+    }
+  },
+
+  handleForwards: function() {
+    var currentPlayheadTime = parseInt(this.props.currentPlayhead);
+    currentPlayheadTime = isFinite(currentPlayheadTime) ? currentPlayheadTime + 10 : 0;
+    if (currentPlayheadTime <= this.props.duration) {
+      this.props.controller.seek(currentPlayheadTime);
+    }
+  },
+
   handleVolumeIconClick: function(evt) {
     if (this.isMobile){
       this.props.controller.startHideControlBarTimer();
@@ -225,6 +241,8 @@ var ControlBar = React.createClass({
 
     // TODO: Update when implementing localization
     var liveText = Utils.getLocalizedString(this.props.language, CONSTANTS.SKIN_TEXT.LIVE, this.props.localizableStrings);
+    var backwardsText = Utils.getLocalizedString(this.props.language, CONSTANTS.SKIN_TEXT.BACKWARDS, this.props.localizableStrings);
+    var forwardsText = Utils.getLocalizedString(this.props.language, CONSTANTS.SKIN_TEXT.FORWARDS, this.props.localizableStrings);
 
     var liveClass = ClassNames({
         "oo-control-bar-item oo-live oo-live-indicator": true,
@@ -259,6 +277,20 @@ var ControlBar = React.createClass({
           onClick={this.handleVolumeIconClick}
           onMouseOver={this.volumeHighlight} onMouseOut={this.volumeRemoveHighlight}/>
         {volumeControls}
+      </div>,
+
+      "backwards": <div className="oo-backwards oo-control-bar-item"
+      onClick={this.handleBackwards} key="backwards">
+        <div className="oo-live-indicator">
+          <span className="oo-live-text"> {backwardsText}</span>
+        </div>
+      </div>,
+
+      "forwards": <div className="oo-forwards oo-control-bar-item"
+      onClick={this.handleForwards} key="forwards">
+        <div className="oo-live-indicator">
+          <span className="oo-live-text"> {forwardsText}</span>
+        </div>
       </div>,
 
       "timeDuration": <div className="oo-time-duration oo-control-bar-duration" style={durationSetting} key="timeDuration">

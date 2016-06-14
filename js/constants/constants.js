@@ -33,6 +33,8 @@ module.exports = {
     AD: "Ad",
     SKIP_AD: "Skip Ad",
     LIVE: "LIVE",
+    BACKWARDS: "Backwards",
+    FORWARDS: "Forwards",
     GO_LIVE: "GO LIVE",
     CC_OPTIONS: "CC Options",
     ON: "On",

@@ -4,7 +4,7 @@
     "loadingImage": {"imageResource": {"url": "//player.ooyala.com/static/v4/stable/4.4.11/skin-plugin/assets/images/loader_svg.svg" } }
   },
   "localization": {
-    "defaultLanguage": "en",
+    "defaultLanguage": "ja",
     "availableLanguageFile": [
       {
         "language": "en",
@@ -23,6 +23,12 @@
         "languageFile": "//player.ooyala.com/static/v4/stable/4.4.11/skin-plugin/zh.json",
         "androidResource": "skin-config/zh.json",
         "iosResource": "zh"
+      },
+      {
+        "language": "ja",
+        "languageFile": "ja.json",
+        "androidResource": "skin-config/ja.json",
+        "iosResource": "ja"
       }
     ]
   },
@@ -178,7 +184,9 @@
       {"name":"playPause", "location":"controlBar", "whenDoesNotFit":"keep", "minWidth":45 },
       {"name":"volume", "location":"controlBar", "whenDoesNotFit":"keep", "minWidth":240 },
       {"name":"live", "location":"controlBar", "whenDoesNotFit":"keep", "minWidth":45},
-      {"name":"timeDuration", "location":"controlBar", "whenDoesNotFit":"drop", "minWidth":145 },
+      {"name":"backwards", "location":"controlBar", "whenDoesNotFit":"keep", "minWidth":35 },
+      {"name":"timeDuration", "location":"controlBar", "whenDoesNotFit":"keep", "minWidth":145 },
+      {"name":"forwards", "location":"controlBar", "whenDoesNotFit":"keep", "minWidth":35 },
       {"name":"flexibleSpace", "location":"controlBar", "whenDoesNotFit":"keep", "minWidth":1 },
       {"name":"share", "location":"controlBar", "whenDoesNotFit":"moveToMoreOptions", "minWidth":45 },
       {"name":"discovery", "location":"controlBar", "whenDoesNotFit":"moveToMoreOptions", "minWidth":45 },
